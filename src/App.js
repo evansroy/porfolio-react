@@ -4,12 +4,14 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Navigate
+  Navigate,
 } from "react-router-dom";
-import './App.css';
-import './style.css';
+import "./App.css";
+import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ScrollToTop from "./components/ScrollToTop";
+import  Navbar  from "./components/Navbar";
+import Footer from "./components/Footer";
 function App() {
   const [load, upadateLoad] = useState(true);
 
@@ -25,11 +27,13 @@ function App() {
     <Router>
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
-      <ScrollToTop/>
+        <Navbar />
+        <ScrollToTop />
+        <Routes></Routes>
+        <Footer />
       </div>
-      
     </Router>
-  )
+  );
 }
 
 export default App;
